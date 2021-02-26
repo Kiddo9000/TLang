@@ -17,9 +17,9 @@ namespace TLang
             // Console
             { "CLS", "ClearConsole", "void" },
             { "WRO", "WriteToConsole", "string,bool" },
+            { "WRI", "ReadFromConsole", "string" },
             { "WRV", "WriteVarToConsole", "string,bool" },
             { "WRN", "WriteNewlineToConsole", "void" },
-            { "WRI", "ReadFromConsole", "string" },
             { "WFK", "WaitForKeyboard", "void" },
 
             // Variables

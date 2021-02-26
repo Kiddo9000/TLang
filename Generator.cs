@@ -138,7 +138,7 @@ namespace TLang
 
         private static bool ContainsSpecialChars(string input)
         {
-            Regex regex = new Regex("^[a-zA-Z0-9 ]*$");
+            Regex regex = new Regex("^[a-zA-Z ]*$");
             return !regex.IsMatch(input);
         }
     }
