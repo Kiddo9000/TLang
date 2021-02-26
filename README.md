@@ -10,23 +10,32 @@ Example: `TLang.exe "C:\Some Folder\Some File.tl"`
 Here is a quick reference for all of the stuff you can use in your program.  
   
 ## Instructions
+**Console**
 Instruction | Parameters | Description
 --- | --- | ---
-. | Console | . 
 *CLS* | (void) | Clears the console.
 *WRO* | (string) Input, (bool) Newline | Writes text to the console.
 *WRI* | (string) OutVariable | Asks the user for input and writes the input to the variable specified.
 *WRV* | (string) Variable, (bool) Newline | Writes the variable contents to the console.
 *WRN* | (void) | Writes a blank line to the console.
 *WFK* | (void) | Waits for keyboard input.
-. | Variables | .
+  
+**Variables**
+Instruction | Parameters | Description
+--- | --- | ---
 *DEF* | (string) Name, (string) Value | Makes a new variable with the provided name and value.
 *SET* | (string) Variable, (string) Value | Updates the specified variable's value.
 *DES* | (string) Variable | Removes the specified variable from memory.
-. | Conditional Functions | .
+  
+**Conditional Functions**
+Instruction | Parameters | Description
+--- | --- | ---
 *VEQ* | (string) Variable, (string) Value, (string) OutVariable | Checks if the specified variable's contents are equal to the provided value and writes either TRUE or FALSE to the output variable.
 *VCT* | (string) Variable, (string) Value, (string) OutVariable | Checks if the specified variable's contents contain the provided value and writes either TRUE or FALSE to the output variable.
-. | Misc Functions | .
+  
+**Misc Functions**
+Instruction | Parameters | Description
+--- | --- | ---
 *SLP* | (string) Time | Sleeps for the amount of time specified in milliseconds.
 *QUT* | (void) | Quits the program.
   
