@@ -6,7 +6,7 @@ You can download the pre-compiled version in releases.
 To compile a file, pass the file's path as an argument. The executable will be generated in the same folder with the same name.  
 Example: `TLang.exe "C:\Some Folder\Some File.tl"`  
   
-## Example code
+## Example
 Here is an example TLang file. Files are stored with the `.tl` extension.  
 ```
 ; Example file
