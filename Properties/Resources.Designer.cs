@@ -61,6 +61,15 @@ namespace TLang.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to //INSSCR.
+        /// </summary>
+        internal static string Insert {
+            get {
+                return ResourceManager.GetString("Insert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///using System.Threading;
@@ -72,10 +81,14 @@ namespace TLang.Properties {
         ///        // -- SCRIPT STUFF --
         ///
         ///        public static string ClassName = &quot;Lib&quot;;
+        ///        public static string Spacing = &quot;            &quot;;
         ///
-        ///        public static Dictionary&lt;string, string&gt; Instructions = new Dictionary&lt;string, string&gt;();
-        ///        public static Dictionary&lt;string, string&gt; InstructionArgs = new Dictionary&lt;string, string&gt;();
-        ///        public static Dictionary&lt;string, string&gt; Variables = new Dictionary&lt;string, string&gt;(); [rest of string was truncated]&quot;;.
+        ///        public static Dictionary&lt;string, string&gt; Variables = new Dictionary&lt;string, string&gt;();
+        ///
+        ///        public static string[,] InstructionTable = new string[,] {
+        ///            // Console
+        ///            { &quot;CLS&quot;, &quot;ClearConsole&quot;, &quot;void&quot; },
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Lib {
             get {
@@ -84,11 +97,11 @@ namespace TLang.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to             .
+        ///   Looks up a localized string similar to 2.0.2.
         /// </summary>
-        internal static string Spacing {
+        internal static string Version {
             get {
-                return ResourceManager.GetString("Spacing", resourceCulture);
+                return ResourceManager.GetString("Version", resourceCulture);
             }
         }
     }

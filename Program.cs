@@ -13,7 +13,7 @@ namespace TLang
             // Subscribe to unhandled exceptions
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(HandleException);
 
-            Console.WriteLine("TLang compiler revision 2.0.1\n");
+            Console.WriteLine($"TLang compiler revision {Properties.Resources.Version}\n");
             Console.WriteLine("  ==  COMPILE STARTED  ==");
 
             foreach (string Arg in args)
@@ -29,13 +29,16 @@ namespace TLang
 
             if (!string.IsNullOrEmpty(FilePath))
             {
-                
                 Console.WriteLine("Generating high-level code...");
-                string Source = Generator.CleanSource(File.ReadAllText(FilePath));
-                string Methods = Properties.Resources.Lib.Replace("//INSSCR", Generator.GenerateResult(Source));
+                string Source = Properties.Resources.Lib.Replace(
+                    Properties.Resources.Insert, 
+                    Generator.GenerateResult(
+                        Generator.CleanSource(File.ReadAllText(FilePath))
+                    )
+                );
 
                 Console.WriteLine("Compiling...");
-                bool Result = Compiler.CreateExecutable(Methods, CompilePath);
+                bool Result = Compiler.CreateExecutable(Source, CompilePath);
 
                 if (Result)
                 {
@@ -50,9 +53,8 @@ namespace TLang
             }
             else
             {
+                Console.WriteLine("ERROR: Source file path argument is missing or incorrect. The path should be formatted as: \"C:\\Some Directory\\Some File.tl\"");
                 Console.WriteLine("  ==  COMPILE FAILED  ==");
-                Console.WriteLine("\nERROR: Source file path argument is missing or incorrect.\nThe path should be formatted as: \"C:\\Some Directory\\Some File.tl\"\n\nPress any key to quit.");
-                Console.ReadKey();
             }
         }
 
@@ -60,9 +62,8 @@ namespace TLang
         {
             Exception ex = (Exception)e.ExceptionObject;
 
+            Console.WriteLine($"ERROR: {ex.Message}\n{ex.StackTrace}");
             Console.WriteLine("  ==  COMPILE FAILED  ==");
-            Console.WriteLine($"\nERROR: {ex.Message}\n\n{ex.StackTrace}\n\nPress any key to quit.");
-            Console.ReadKey();
 
             Environment.Exit(1);            
         }
