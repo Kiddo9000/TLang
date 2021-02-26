@@ -39,7 +39,7 @@ Instruction | Parameters | Description
 *SLP* | (string) Time | Sleeps for the amount of time specified in milliseconds.
 *QUT* | (void) | Quits the program.
   
-### Sections
+## Sections
 You can make a section by writing the name of the section, followed by a colon.  
 Example: `MySection:`  
   
@@ -67,7 +67,7 @@ Some stuff in section B! Let's go to section A!
 Some stuff in section A!
 ```  
   
-### Conditions
+## Conditions
 You can go to a specific section if a variable is equal to TRUE.  
 Example: `$MyVar MySection`  
   
@@ -78,10 +78,10 @@ MyVar     <- The variable to read.
 MySection <- The section to go to if the variable is equal to TRUE.
 ```  
   
-### Parameters
+## Parameters
 To define multiple parameters in an instruction, you can use the `||` delimiter.  
 Example: `WRO Some Text I want to write||TRUE`  
   
-### Booleans
+## Booleans
 Booleans are defined with either `TRUE` or `FALSE`. That's it. I don't know what you expected to find here.  
   
