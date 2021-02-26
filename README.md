@@ -6,6 +6,42 @@ You can download the pre-compiled version in releases.
 To compile a file, pass the file's path as an argument. The executable will be generated in the same folder with the same name.  
 Example: `TLang.exe "C:\Some Folder\Some File.tl"`  
   
+## Example code
+Here is an example TLang file. Files are stored with the `.tl` extension.  
+```
+; Example file
+
+Main:
+	WRO Write something to have it echoed back to you!||TRUE
+	WRO You can also type "done" to quit.||TRUE
+	WRN
+	
+Loop:
+	DEF UInput||Empty
+	DEF UQuit||FALSE
+	
+	WRO >> ||FALSE
+	WRI UInput
+	
+	VEQ UInput||done||UQuit
+	$UQuit Quit
+	
+	WRO You typed: ||FALSE
+	WRV UInput||FALSE
+	WRO .||TRUE
+	WRN
+	
+	DES UInput
+	DES UQuit
+	
+	.Loop
+	
+Quit:
+	WRN
+	WRO Qutting...||TRUE
+	QUT
+```   
+  
 ## Programming Reference  
 Here is a quick reference for all of the stuff you can use in your program.  
   
@@ -15,7 +51,7 @@ Instruction | Parameters | Description
 --- | --- | ---
 *CLS* | (void) | Clears the console.
 *WRO* | (string) Input, (bool) Newline | Writes text to the console.
-*WRI* | (string) OutVariable | Asks the user for input and writes the input to the variable specified.
+*WRI* | (string) Variable | Asks the user for input and writes the input to the variable specified.
 *WRV* | (string) Variable, (bool) Newline | Writes the variable contents to the console.
 *WRN* | (void) | Writes a blank line to the console.
 *WFK* | (void) | Waits for keyboard input.
