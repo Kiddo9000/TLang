@@ -78,6 +78,10 @@ MyVar     <- The variable to read.
 MySection <- The section to go to if the variable is equal to TRUE.
 ```  
   
+## Comments
+Comments begin with a semicolon. Comments CANNOT be on the same line as any code. They must be on their own line.  
+Example: `; This is a comment.`  
+  
 ## Parameters
 To define multiple parameters in an instruction, you can use the `||` delimiter.  
 Example: `WRO Some Text I want to write||TRUE`  
