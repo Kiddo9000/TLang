@@ -99,7 +99,7 @@ SectionA:
 	QUT
 
 SectionB:
-	WRo Some stuff in section B! Let's go to section A!||TRUE
+	WRO Some stuff in section B! Let's go to section A!||TRUE
 	.SectionA
 ```  
   
