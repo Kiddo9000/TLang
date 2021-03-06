@@ -16,10 +16,13 @@ Main:
 	WRO You can also type "done" to quit.||TRUE
 	WRN
 	
-Loop:
 	DEF UInput||Empty
 	DEF UQuit||FALSE
 	
+	; This isn't necessary since it will go to the next section anyways since it's directly below, but it's for good measure :)
+	.Loop
+	
+Loop:
 	WRO >> ||FALSE
 	WRI UInput
 	
@@ -31,12 +34,15 @@ Loop:
 	WRO .||TRUE
 	WRN
 	
-	DES UInput
-	DES UQuit
+	SET UInput||Empty
 	
 	.Loop
 	
 Quit:
+	; Again, not necessary, but if we were to continue doing more stuff below, we would want to remove unused variables to save memory.
+	DES UInput
+	DES UQuit
+
 	WRN
 	WRO Qutting...||TRUE
 	QUT
